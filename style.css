@@ -1,0 +1,45 @@
+:root {
+    --maroon: #3C0919;
+    --maroon-light: #7D1128;
+    --red-dark: #C41E3D;
+    --red-light: #E2294F;
+    --salsa: #FB4B4E;
+}
+body {
+    background-color: var(--salsa); 
+    color: var(--maroon-light);
+}
+#calculator {
+    margin: auto;
+    position: relative;
+    height: 80vh;
+    width: 80vw;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+}
+#plus {
+    grid-row: span 2;
+}
+#enter {
+    grid-row: span 2;
+    font-size: xx-large;
+}
+#zero {
+    grid-column: span 2;
+}
+.button {
+    position: relative;
+    border: 2px solid;
+    display: flex;
+    flex-flow: column;
+    text-align: center;
+    justify-content: center;
+    font-size: x-large;
+    text-shadow: 2px 2px var(--red-light);
+}
+.button:hover {
+    transition: 0.35s;
+    color: var(--maroon);
+    background-color: var(--red-light);
+}
