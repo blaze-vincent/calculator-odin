@@ -82,7 +82,11 @@ backspace.addEventListener("click", () => {
 
 enter.addEventListener("click", () => {
     let result = processInput();
-    input = result.toString().split("");
+    if(result === "NaN"){
+        input = [result];
+    } else {
+        input = result.toString().split("");
+    }
     calcDisplay.textContent = input.join("");
 });
 
