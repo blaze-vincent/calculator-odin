@@ -4,19 +4,54 @@
     --red-dark: #C41E3D;
     --red-light: #E2294F;
     --salsa: #FB4B4E;
+    --salsa-dark: #D83C3E;
 }
 body {
     background-color: var(--salsa); 
     color: var(--maroon-light);
 }
+#info-box{
+    display: block;
+    margin: auto;
+    background-color: var(--salsa-dark);
+    position: relative;
+    width: 80vw;
+    height: 3.75rem;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-evenly;
+    text-shadow: 2px 2px var(--red-light);
+}
+#info-box p, #info-box svg {
+    padding-top: 5px;
+}
+svg:hover{
+    transition: 0.35s;
+    fill: var(--maroon-light);
+}
+#github-mark{
+    color: var(--maroon);
+}
 #calculator {
     margin: auto;
+    margin-top: 5px;
     position: relative;
     height: 80vh;
+    min-height: 500px;
     width: 80vw;
+    max-width: 700px;
+    min-width: 300px;
     display: grid;
+    gap: 5px;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+}
+#calc-display {
+    grid-column: span 4;
+    background-color: var(--salsa-dark);
+    text-align: end;
+    padding-right: 1em;
+    overflow: hidden;
 }
 #plus {
     grid-row: span 2;
@@ -42,4 +77,11 @@ body {
     transition: 0.35s;
     color: var(--maroon);
     background-color: var(--red-light);
+}
+svg {
+    position: relative;
+    height: 75%;
+    fill: var(--maroon);
+    border-radius: 50%;
+    box-shadow: 2px 2px var(--red-light);
 }
