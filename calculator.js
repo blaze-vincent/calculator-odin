@@ -1,6 +1,7 @@
 const calcDisplay = document.querySelector("#calc-display");
 const backspace = document.querySelector("#backspace");
 const enter = document.querySelector("#enter");
+const gitMark = document.querySelector("svg");
 const buttons = {
     divide: document.querySelector("#divide"),
     multiply: document.querySelector("#multiply"),
@@ -83,4 +84,8 @@ enter.addEventListener("click", () => {
     let result = processInput();
     input = result.toString().split("");
     calcDisplay.textContent = input.join("");
+});
+
+gitMark.addEventListener("click", () => {
+    window.open("https://github.com/blaze-vincent");
 });
