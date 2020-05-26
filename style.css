@@ -12,6 +12,7 @@ body {
 }
 #info-box{
     display: block;
+    box-sizing: border-box;
     margin: auto;
     background-color: var(--salsa-dark);
     position: relative;
