@@ -16,14 +16,15 @@ body {
     background-color: var(--salsa-dark);
     position: relative;
     width: 80vw;
+    max-width: 700px;
+    min-width: 300px;
     height: 3.75rem;
     display: flex;
     flex-flow: row;
     justify-content: space-evenly;
     text-shadow: 2px 2px var(--red-light);
-}
-#info-box p, #info-box svg {
-    padding-top: 5px;
+    align-items: center;
+    border: 2px solid;
 }
 svg:hover{
     transition: 0.35s;
