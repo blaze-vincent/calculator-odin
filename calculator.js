@@ -74,6 +74,9 @@ const processInput = () => {
     }
 }
 
+//buttons
+//v v v v v v v v v v v v v v v v v v v v v v v v
+//buttons
 for (let i in buttons){
     buttons[i].addEventListener("click", () => {
         if(input.includes("NaN")){
@@ -111,3 +114,54 @@ clearAll.addEventListener("click", () => {
 gitMark.addEventListener("click", () => {
     window.open("https://github.com/blaze-vincent");
 });
+
+//buttons
+//^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+//buttons
+
+///keyboard input
+///v v v v v v v v v v v v v v v v v v v v v v v v
+///keyboard input
+const inputNumbers = ["0", "1", "2", "3",
+                      "4", "5", "6", "7",
+                      "8", "9", "0"];
+document.addEventListener("keydown", e => {
+    for(let i = 0; i < inputNumbers.length; i++){
+        if(e.key === inputNumbers[i]){
+            input.push(e.key);
+            calcDisplay.textContent = input.join("");
+            return;
+        }
+    }
+    switch(e.key){
+        case "enter":
+            let result = processInput();
+            if(result === "NaN"){
+                input = [result];
+            } else {
+                input = result.toString().split("");
+            }
+            calcDisplay.textContent = input.join("");
+            break;
+        case "-":
+            input.push(" - ");
+            calcDisplay.textContent = input.join("");
+            break;
+        case "+":
+            input.push(" + ");
+            calcDisplay.textContent = input.join("");
+            break;
+        case "*":
+            input.push(" * ");
+            calcDisplay.textContent = input.join("");
+            break;
+        case "/":
+            input.push(" / ");
+            calcDisplay.textContent = input.join("");
+            break;
+    }
+    
+});
+//keyboard input
+//^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+//keyboard input
