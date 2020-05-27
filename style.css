@@ -7,7 +7,7 @@
   --salsa-dark: #d83c3e;
 }
 body {
-  padding-top: 10vh;
+  margin-top: 8vh;
   background-color: var(--salsa);
   color: var(--maroon-light);
 }
