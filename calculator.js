@@ -2,6 +2,7 @@ const calcDisplay = document.querySelector("#calc-display");
 const backspace = document.querySelector("#backspace");
 const enter = document.querySelector("#enter");
 const clearAll = document.querySelector("#clear-all");
+const decimal = document.querySelector("#decimal");
 const gitMark = document.querySelector("svg");
 const buttons = {
     divide: document.querySelector("#divide"),
@@ -18,18 +19,24 @@ const buttons = {
     two: document.querySelector("#two"),
     three: document.querySelector("#three"),
     zero: document.querySelector("#zero"),
-    decimal: document.querySelector("#decimal"),
 }
 
 let input = [];
 const processInput = () => {
+    for(let i = 0; i < input.length; i++){
+        if(input[i] === "."){
+            if(isNaN(parseFloat(input[i+1])) || !input[i+1]){
+                return "NaN";
+            }
+        }
+    }
     let inputUpdated = input.join("")
                             .split(" ");
     for(let i = 0; i < inputUpdated.length; i++){
-        if(inputUpdated[i] === ""){
+        if(inputUpdated[i] === ""){ //remove empty strings if they occur
             inputUpdated.splice(i, 1);
         }
-        if(inputUpdated[i] === "-"){
+        if(inputUpdated[i] === "-"){ //unary minus
             if(isNaN(parseFloat(inputUpdated[i-1]))){
                 inputUpdated.splice(i, 2, `-${inputUpdated[i+1]}`)
             }
@@ -49,8 +56,12 @@ const processInput = () => {
                         inputUpdated[i-1]*inputUpdated[i+1]);
                 }
                 if(inputUpdated[i] === "/"){
-                    inputUpdated.splice(i-1, 3, 
-                        inputUpdated[i-1]/inputUpdated[i+1]);
+                    if(parseFloat(inputUpdated[i+1]) === 0){
+                        return "NaN";
+                    } else {
+                        inputUpdated.splice(i-1, 3, 
+                            inputUpdated[i-1]/inputUpdated[i+1]);
+                    }
                 }
             }
         }
@@ -106,6 +117,13 @@ clearAll.addEventListener("click", () => {
     input.length = 0;
     calcDisplay.textContent = "ヽ(ヅ)ノ";
 });
+
+decimal.addEventListener("click", () => {
+    if(input[input.length -1] !== "."){
+        input.push(".");
+        calcDisplay.textContent = input.join("");
+    }
+})
 
 gitMark.addEventListener("click", () => {
     window.open("https://github.com/blaze-vincent");
