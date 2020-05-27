@@ -24,6 +24,16 @@ let input = [];
 const processInput = () => {
     let inputUpdated = input.join("")
                             .split(" ");
+    for(let i = 0; i < inputUpdated.length; i++){
+        if(inputUpdated[i] === ""){
+            inputUpdated.splice(i, 1);
+        }
+        if(inputUpdated[i] === "-"){
+            if(isNaN(parseFloat(inputUpdated[i-1]))){
+                inputUpdated.splice(i, 2, `-${inputUpdated[i+1]}`)
+            }
+        }
+    }
     for(let i = 0; i < inputUpdated.length; i++){ //ensure binary operators are surrounded by numbers
         if(inputUpdated[i] === "*" || inputUpdated[i] === "/"
         || inputUpdated[i] === "+" || inputUpdated[i] === "-"){
@@ -66,6 +76,9 @@ const processInput = () => {
 
 for (let i in buttons){
     buttons[i].addEventListener("click", () => {
+        if(input.includes("NaN")){
+            input.length = 0;
+        }
         input.push(buttons[i].textContent);
         calcDisplay.textContent = input.join("");
     });

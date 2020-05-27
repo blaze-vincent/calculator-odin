@@ -1,89 +1,89 @@
 :root {
-    --maroon: #3C0919;
-    --maroon-light: #7D1128;
-    --red-dark: #C41E3D;
-    --red-light: #E2294F;
-    --salsa: #FB4B4E;
-    --salsa-dark: #D83C3E;
+  --maroon: #3c0919;
+  --maroon-light: #7d1128;
+  --red-dark: #c41e3d;
+  --red-light: #e2294f;
+  --salsa: #fb4b4e;
+  --salsa-dark: #d83c3e;
 }
 body {
-    background-color: var(--salsa); 
-    color: var(--maroon-light);
+  background-color: var(--salsa);
+  color: var(--maroon-light);
 }
-#info-box{
-    display: block;
-    box-sizing: border-box;
-    margin: auto;
-    background-color: var(--salsa-dark);
-    position: relative;
-    width: 80vw;
-    max-width: 700px;
-    min-width: 300px;
-    height: 3.75rem;
-    display: flex;
-    flex-flow: row;
-    justify-content: space-evenly;
-    text-shadow: 2px 2px var(--red-light);
-    align-items: center;
-    border: 2px solid;
+#info-box {
+  display: block;
+  box-sizing: border-box;
+  margin: auto;
+  background-color: var(--salsa-dark);
+  position: relative;
+  width: 80vw;
+  max-width: 700px;
+  min-width: 300px;
+  height: 3.75rem;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-evenly;
+  text-shadow: 2px 2px var(--red-light);
+  align-items: center;
+  border: 2px solid;
 }
-svg:hover{
-    transition: 0.35s;
-    fill: var(--maroon-light);
+svg:hover {
+  transition: 0.35s;
+  fill: var(--maroon-light);
 }
-#github-mark{
-    color: var(--maroon);
+#github-mark {
+  color: var(--maroon);
 }
 #calculator {
-    margin: auto;
-    margin-top: 5px;
-    position: relative;
-    height: 80vh;
-    min-height: 500px;
-    width: 80vw;
-    max-width: 700px;
-    min-width: 300px;
-    display: grid;
-    gap: 5px;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(6, 1fr);
+  margin: auto;
+  margin-top: 5px;
+  position: relative;
+  height: 80vh;
+  min-height: 500px;
+  width: 80vw;
+  max-width: 700px;
+  min-width: 300px;
+  display: grid;
+  gap: 5px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(6, 1fr);
 }
 #calc-display {
-    grid-column: span 4;
-    background-color: var(--salsa-dark);
-    text-align: end;
-    padding-right: 1em;
-    overflow: hidden;
+  grid-column: span 4;
+  background-color: var(--salsa-dark);
+  text-align: end;
+  padding-right: 1em;
+  overflow: hidden;
 }
 #plus {
-    grid-row: span 2;
+  grid-row: span 2;
 }
 #enter {
-    grid-row: span 2;
-    font-size: xx-large;
+  grid-row: span 2;
+  font-size: xx-large;
 }
 #zero {
-    grid-column: span 2;
+  grid-column: span 2;
 }
 .button {
-    position: relative;
-    border: 2px solid;
-    display: flex;
-    flex-flow: column;
-    text-align: center;
-    justify-content: center;
-    font-size: x-large;
-    text-shadow: 2px 2px var(--red-light);
+  position: relative;
+  border: 2px solid;
+  display: flex;
+  flex-flow: column;
+  text-align: center;
+  justify-content: center;
+  font-size: x-large;
+  text-shadow: 2px 2px var(--red-light);
 }
 .button:hover {
-    transition: 0.35s;
-    color: var(--maroon);
-    background-color: var(--red-light);
+  transition: 0.35s;
+  color: var(--maroon);
+  background-color: var(--red-light);
 }
 svg {
-    position: relative;
-    height: 75%;
-    fill: var(--maroon);
-    border-radius: 50%;
-    box-shadow: 2px 2px var(--red-light);
+  position: relative;
+  height: 75%;
+  fill: var(--maroon);
+  border-radius: 50%;
+  box-shadow: 2px 2px var(--red-light);
 }
