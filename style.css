@@ -55,9 +55,6 @@ svg:hover {
   padding-right: 1em;
   overflow: hidden;
 }
-#plus {
-  grid-row: span 2;
-}
 #enter {
   grid-row: span 2;
   font-size: xx-large;

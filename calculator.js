@@ -1,6 +1,7 @@
 const calcDisplay = document.querySelector("#calc-display");
 const backspace = document.querySelector("#backspace");
 const enter = document.querySelector("#enter");
+const clearAll = document.querySelector("#clear-all");
 const gitMark = document.querySelector("svg");
 const buttons = {
     divide: document.querySelector("#divide"),
@@ -69,10 +70,9 @@ const processInput = () => {
                 }
             }
         }
+        return inputUpdated[0];
     }
-    return inputUpdated[0];
 }
-
 
 for (let i in buttons){
     buttons[i].addEventListener("click", () => {
@@ -87,7 +87,7 @@ for (let i in buttons){
 backspace.addEventListener("click", () => {
     input.pop();
     if(input.length === 0){
-        calcDisplay.textContent = "0";
+        calcDisplay.textContent = "ヽ(ヅ)ノ";
         return;
     };
     calcDisplay.textContent = input.join("");
@@ -101,6 +101,11 @@ enter.addEventListener("click", () => {
         input = result.toString().split("");
     }
     calcDisplay.textContent = input.join("");
+});
+
+clearAll.addEventListener("click", () => {
+    input.length = 0;
+    calcDisplay.textContent = "ヽ(ヅ)ノ";
 });
 
 gitMark.addEventListener("click", () => {
