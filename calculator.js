@@ -47,12 +47,10 @@ const processInput = () => {
                 if(inputUpdated[i] === "*"){ //broken up so it is parsed from left to right
                     inputUpdated.splice(i-1, 3, 
                         inputUpdated[i-1]*inputUpdated[i+1]);
-                    continue;
                 }
                 if(inputUpdated[i] === "/"){
                     inputUpdated.splice(i-1, 3, 
                         inputUpdated[i-1]/inputUpdated[i+1]);
-                    continue;
                 }
             }
         }
@@ -61,16 +59,14 @@ const processInput = () => {
                 if(inputUpdated[i] === "+"){ //broken up so it is parsed from left to right
                     inputUpdated.splice(i-1, 3, 
                         parseFloat(inputUpdated[i-1])+parseFloat(inputUpdated[i+1]));
-                    continue;
                 }
                 if(inputUpdated[i] === "-"){
                     inputUpdated.splice(i-1, 3, 
                         inputUpdated[i-1]-inputUpdated[i+1]);
-                    continue;
                 }
             }
         }
-        return inputUpdated[0];
+        return inputUpdated;
     }
 }
 
