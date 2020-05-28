@@ -1,0 +1,31 @@
+body {
+    flex-flow: column;
+}
+
+body > div {
+    display: flex;
+    flex-flow: column;
+    position: absolute;
+    margin: 10vh 10vw;
+
+    width: 80%;
+    min-width: 200px;
+    min-height: 200px;
+
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+}
+
+header{
+    font-size: large;
+}
+
+main {
+    position: relative;
+    
+    top: 15%;
+    height: 85%;
+}

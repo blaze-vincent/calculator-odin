@@ -128,7 +128,6 @@ decimal.addEventListener("click", () => {
 gitMark.addEventListener("click", () => {
     window.open("https://github.com/blaze-vincent");
 });
-
 //buttons
 //^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 //buttons

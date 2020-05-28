@@ -1,87 +1,103 @@
 :root {
-  --maroon: #3c0919;
-  --maroon-light: #7d1128;
-  --red-dark: #c41e3d;
-  --red-light: #e2294f;
-  --salsa: #fb4b4e;
-  --salsa-dark: #d83c3e;
+  	--maroon: #3c0919;
+  	--maroon-light: #7d1128;
+  	--red-dark: #c41e3d;
+  	--red-light: #e2294f;
+  	--salsa: #fb4b4e;
+  	--salsa-dark: #d83c3e;
 }
 body {
-  margin-top: 8vh;
-  background-color: var(--salsa);
-  color: var(--maroon-light);
+  	background-color: var(--salsa);
+  	color: var(--maroon-light);
+
+	/*https://css-tricks.com/books/fundamental-css-tactics/scale-typography-screen-size/ */
+	font-size: calc(16px + (26 - 16) * ((100vw - 300px) / (1600 - 300)));
+
+	display: flex;
+	flex-flow: row;
+	justify-content: space-around;
+  	position: absolute;
+  	left: 0;
+  	right: 0;
+  	top: 0;
+  	bottom: 0;
+
+  	margin: 0;
 }
-#info-box {
-  display: block;
-  box-sizing: border-box;
-  margin: auto;
-  background-color: var(--salsa-dark);
-  position: relative;
-  width: 80vw;
-  max-width: 700px;
-  min-width: 300px;
-  height: 3.75rem;
-  display: flex;
-  flex-flow: row;
-  justify-content: space-evenly;
-  text-shadow: 2px 2px var(--red-light);
-  align-items: center;
-  border: 2px solid;
+body > div {
+	position: relative;
+	top: 10%;
+	width: 50%;
+	min-width: 200px;
+	height: 80%;
+	min-height: 200px;
 }
-svg:hover {
-  transition: 0.35s;
-  fill: var(--maroon-light);
+header {
+  	background-color: var(--salsa-dark);
+
+	display: flex;
+	flex-flow: row;
+  	justify-content: space-around;
+  	box-sizing: border-box;
+  	position: absolute;
+  	top: 0%;
+	height: 10%;
+	width: 100%;
+
+	border-radius: 2px;
+  	text-shadow: 2px 2px var(--red-light);
+  	align-items: center;
 }
 #github-mark {
-  color: var(--maroon);
-}
-#calculator {
-  margin: auto;
-  margin-top: 5px;
-  position: relative;
-  height: 70vh;
-  min-height: 500px;
-  width: 80vw;
-  max-width: 700px;
-  min-width: 300px;
-  display: grid;
-  gap: 5px;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(6, 1fr);
-}
-#calc-display {
-  grid-column: span 4;
-  background-color: var(--salsa-dark);
-  text-align: end;
-  padding-right: 1em;
-  overflow: hidden;
-}
-#enter {
-  grid-row: span 2;
-  font-size: xx-large;
-}
-#zero {
-  grid-column: span 2;
-}
-.button {
-  position: relative;
-  border: 2px solid;
-  display: flex;
-  flex-flow: column;
-  text-align: center;
-  justify-content: center;
-  font-size: x-large;
-  text-shadow: 2px 2px var(--red-light);
-}
-.button:hover {
-  transition: 0.35s;
-  color: var(--maroon);
-  background-color: var(--red-light);
+	color: var(--maroon);
 }
 svg {
-  position: relative;
-  height: 75%;
-  fill: var(--maroon);
-  border-radius: 50%;
-  box-shadow: 2px 2px var(--red-light);
+	position: relative;
+	height: 75%;
+	fill: var(--maroon);
+	border-radius: 45%;
+	box-shadow: 2px 2px var(--red-light);
+} 
+svg:hover {
+  	transition: 0.35s;
+  	fill: var(--maroon-light);
+}
+
+main {
+  	display: grid;
+  	gap: 5px;
+  	grid-template-columns: repeat(4, 1fr);
+  	grid-template-rows: repeat(6, 1fr);
+  	position: absolute;
+	height: 80%;
+	width: 100%;
+  	bottom: 0%;
+
+}
+#calc-display {
+  	grid-column: span 4;
+  	background-color: var(--salsa-dark);
+  	text-align: end;
+  	padding-right: 1em;
+}
+.button {
+  	position: relative;
+  	border: 2px solid;
+  	display: flex;
+  	flex-flow: column;
+  	text-align: center;
+	justify-content: center;
+	text-shadow: 2px 2px var(--red-light);
+	border-radius: 2px;
+}
+.button:hover {
+	transition: 0.35s;
+	color: var(--maroon);
+	background-color: var(--red-light);
+}
+#enter {
+	grid-row: span 2;
+}
+#zero {
+	grid-column: span 2;
 }
