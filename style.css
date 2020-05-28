@@ -12,9 +12,7 @@ body {
 
 	/*https://css-tricks.com/books/fundamental-css-tactics/scale-typography-screen-size/ */
 	font-size: calc(16px + (26 - 16) * ((100vw - 300px) / (1600 - 300)));
-
-	display: flex;
-	flex-flow: row;
+	
 	justify-content: space-around;
   	position: absolute;
   	left: 0;
